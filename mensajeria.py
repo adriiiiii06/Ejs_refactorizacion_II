@@ -39,21 +39,21 @@ class Email(Notificacion):
 def main():
     
     metodo_envio = input("¿Qué método de envío quieres utilizar? SMS/Email: ").lower()
-    men = input("Escribe tu mensaje: ")
-    id = input("Introduce el codigo de identificacion: ")
-    nom = input("Introduce el nombre de usuario: ")
+    mensaje = input("Escribe tu mensaje: ")
+    identificacion = input("Introduce el codigo de identificacion: ")
+    nombre = input("Introduce el nombre de usuario: ")
     
     match metodo_envio:
         case "sms":
-            n = input("¿A qué número de teléfono quieres enviarlo: ")
-            noti = SMS(men, id, nom)
-            noti.enviar_mensaje(n)
+            num_telefono = input("¿A qué número de teléfono quieres enviarlo: ")
+            notificacion = SMS(mensaje, identificacion, nombre)
+            notificacion.enviar_mensaje(num_telefono)
 
         case "email":
             direccion_email = input("Destinatario: ")
             asunto = input("Asunto: ")
-            noti = Email(men, id, nom, asunto, direccion_email)
-            noti.enviar_mensaje()
+            notificacion = Email(mensaje, identificacion, nombre, asunto, direccion_email)
+            notificacion.enviar_mensaje()
 
 
-main()
+main()  
