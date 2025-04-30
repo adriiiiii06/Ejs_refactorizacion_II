@@ -14,9 +14,6 @@ class SMS(Notificacion):
     
     sms_enviados = 0
 
-    def __init__(self, mensaje, identificacion, nombre):
-      super().__init__(mensaje, identificacion, nombre)
-
     def enviar_mensaje(self, num):
       SMS.sms_enviados += 1
       print(f"Enviando SMS al número {num}...")
